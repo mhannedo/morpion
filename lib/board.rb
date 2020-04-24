@@ -2,6 +2,7 @@ class Board
 
     @@array =[]
     @@array_counter = []
+    @@counter = 0
    
     def initialize
   
@@ -42,10 +43,7 @@ class Board
             
         end        
     
-    end 
-
-    
-    
+    end   
     
     def showi
         return @@array
@@ -104,10 +102,14 @@ class Board
 
     def check_end_game
         
+        @@counter = @@counter + 1
+
         if self.counting.include? 3 
                return 1 
         elsif self.counting.include? 30
                 return 2
+        elsif @@counter == 9 
+            return 3
         else return 0
         end
         
@@ -130,6 +132,8 @@ class Board
         puts "Terminado, le #{user_name} a gagné"
         elsif self.counting.include? 30
         puts "Terminado, le #{user_name} a gagné"
+        elsif @@counter == 9
+        puts "Match nul" 
         end
     end
 
