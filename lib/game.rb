@@ -23,6 +23,7 @@ class Game
             board.show
             board.change(user1.choice,user1) 
             board.end_text(user1.show_name)
+          
             break if board.check_end_game == 1 || board.check_end_game == 3 
             
             puts "A toi de jouer #{user2.show_name} ! Quel case choisis-tu ?"
@@ -30,6 +31,7 @@ class Game
             board.show
             board.change(user2.choice,user2)
             board.end_text(user1.show_name)
+            
             break if board.check_end_game == 2
             
         end
